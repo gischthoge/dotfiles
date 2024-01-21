@@ -1,0 +1,36 @@
+(defwidget powermenucontent []
+  (box :orientation "h"
+       :class "powermenu-container"
+    (box :class "shutdown-btn-box"
+         :orientation "h"
+      (button :class "btn"
+              :tooltip "Shutdown"
+              :onclick "eww close powermenu && st -c floating -e sudo poweroff"
+              "⏻")
+    )
+    (box :class "reboot-btn-box"
+         :orientation "h"
+      (button :class "btn"
+              :tooltip "Reboot"
+              :onclick "eww close powermenu && st -c floating -e sudo reboot"
+              "勒")
+    )
+    (box :class "exit-btn-box"
+         :orientation "h"
+      (button :class "btn"
+              :tooltip "Quit bspwm"
+              :onclick "bspc quit"
+              "")
+    )
+  )
+)
+
+(defwindow powermenu
+  :monitor 1
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "30%"
+                      :height "15%"
+                      :anchor "top right")
+  :wm-ignore true
+(powermenucontent))

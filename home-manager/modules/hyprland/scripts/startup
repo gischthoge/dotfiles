@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+wl-clipbord-history -t &
+~/.config/hypr/xdg-portal-hyprland &
+
