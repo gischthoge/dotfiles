@@ -1,11 +1,11 @@
-{ self, theme, ...}:
+{ theme, ...}:
 {
   programs.regreet = {
     enable = true;
     cageArgs = [ "-s" "-m" "last" ];
     settings = {
       background = {
-        path = "${self}/nixos/modules/greetd/wallpaper/wp1.png";
+        path = "./wallpaper/wp1.png";
         fit = "Fill";
       };
 

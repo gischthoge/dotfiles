@@ -1,15 +1,14 @@
-{ inputs, pkgs, theme, ... }:
-let
-  modules = import ../../modules {
-    inherit theme;
-  };
-in
-inputs.hm.nixosModules.home-manager {
+{ config, pkgs, inputs, lib, theme, self, ... }:
+{
+  imports = [ 
+    inputs.hm.nixosModules.home-manager
+  ];
+  
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit inputs modules theme;
+      inherit inputs theme self;
     };
     users.michael = import ./michael.nix;
   };

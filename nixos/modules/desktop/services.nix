@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = [ pkgs.dbus ];
+
   services = {
     avahi.enable = true;
     dbus.enable = true;
@@ -13,12 +15,12 @@
   };
     
   services.avahi = {
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
 
   services.dbus = {
-    packages = [ pkgs.gcr ];
+    packages = [ pkgs.dbus pkgs.gcr ];
     implementation = "broker";
   };
 

@@ -1,9 +1,9 @@
 { self, pkgs, ... }:
 {
   themename = { 
-    default = "nord";
-    kitty = "Nord";
-    alacritty = "nord";
+    default = "Tokyo Night";
+    kitty = "Tokyo Night";
+    alacritty = "tokyo-night";
   };
 
   cursor_theme.name = "Bibata-Modern-Classic";
@@ -11,7 +11,7 @@
 
   icon_theme.name = "Papirus-Dark";
   
-  gtk_theme.name = "Nordic";
+  gtk_theme.name = "Tokyonight-B";
   gtk_theme.preferDark = true;
 
   fonts = {
@@ -31,7 +31,7 @@
   themePackages = with pkgs; [
     bibata-cursors
     papirus-icon-theme
-    nordic
+    tokyo-night-gtk
   ];
 
   fontPackages = with pkgs; [

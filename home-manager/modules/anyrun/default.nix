@@ -1,5 +1,5 @@
 
-{ pkgs, inputs, config, self, ...}: {
+{ pkgs, inputs, theme, self, ...}: {
 
   programs.anyrun = {
     config = {
@@ -9,6 +9,10 @@
         rink
         shell
         symbols
+        dictionary
+        translate
+        websearch
+#        kidex
       ];
 
       width.fraction = 0.3;
@@ -17,6 +21,18 @@
       closeOnClick = true;
     };
 
-    extraCss = builtins.readFile "${self}/styles/anyrun_dark.css";
+    extraCss = builtins.readFile "${self}/home-manager/modules/anyrun/styles/anyrun_dark.css";
+
+    extraConfigFiles."websearch.ron".text = ''
+      Config (
+        prefix: "?",
+        Custom(
+          name: "NixPackages",
+          url: "https://search.nixos.org/packages?channel=unstable&size=50&sort=relevance&type=packages&query={}",
+        )
+        engines: [Google, NixPackages]
+      )
+    '';
   };
+
 }

@@ -5,8 +5,8 @@
     ./security.nix
     ./services.nix
     ./fonts.nix
+    ./portals.nix
     ./flatpak.nix
-    ./wayland.nix
   ];
 
   location.provider = "geoclue2";

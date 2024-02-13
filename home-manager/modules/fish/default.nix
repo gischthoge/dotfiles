@@ -21,8 +21,8 @@
     '';
 
     shellAliases = {
-      ls = "eza -la";
-      edit = "nix run github:gischthoge/neovim-flake";
+      ls = "exa -la";
+      edit = "givim";
     };
 
     plugins = [

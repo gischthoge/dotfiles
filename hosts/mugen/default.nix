@@ -5,12 +5,12 @@ let
     config.allowUnfree = true;
   };
 
-  theme = import ../../themes/nord.nix {
-    inherit pkgs;
+  theme = import ../../themes/tokyo_night.nix {
+    inherit self pkgs;
   };
 
 in nixpkgs.lib.nixosSystem {
-  specialArgs = { inherit pkgs inputs theme; };
+  specialArgs = { inherit pkgs inputs theme self; };
 
   modules = [
     ./hardware-configuration.nix
@@ -28,5 +28,4 @@ in nixpkgs.lib.nixosSystem {
 
     ../../home-manager/profiles/mugen
   ];
-
 }

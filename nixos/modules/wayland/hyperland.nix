@@ -1,6 +1,5 @@
 {  pkgs, ... }:
 {
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   programs.hyprland = {
     enable = true;
@@ -10,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     kitty
     alacritty
-    alacritty-themes
+    alacritty-theme
     glib
     dconf
     grim
@@ -26,6 +25,6 @@
     gtklock
     wofi
     rofi-wayland
-    ja
+    jaq
   ];
 }

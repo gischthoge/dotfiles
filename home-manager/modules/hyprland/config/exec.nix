@@ -10,11 +10,12 @@ exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESK
 exec-once = /etc/profiles/per-user/michael/bin/polkit-kde-authentication-agent
 exec-once = hyprland-autoname-workspaces
 #exec-once = waybar
-exec-once = chstyle restore
+#exec-once = chstyle restore
 
 #exec-once = wlsunset -S 9:00 -s 19:30
 #exec-once = systemctl --user start clight
 
+exec-once = swww init
 exec-once = ewwbar
 
 '';

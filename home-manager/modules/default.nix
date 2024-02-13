@@ -1,20 +1,21 @@
-{ ... }:
+{ self,  ... }:
 {
+  inherit self;
   imports = [
     ./alacritty
-    ./anyrun
+#    ./anyrun
     ./dunst 
-    ./eww
+#    ./eww
     ./fish
     ./git
-    ./gtklock
+#    ./gtklock
     ./hyprland
     ./imv
     ./kitty
     ./nextcloud_client
-    ./python
+#    ./python
     ./sway
-    ./texlive
+#    ./texlive
     ./waybar
     ./zsh
   ];

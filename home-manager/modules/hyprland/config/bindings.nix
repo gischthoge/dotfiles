@@ -1,11 +1,11 @@
 { ... }:
 {
   wayland.windowManager.hyprland.extraConfig = ''
-#bind = SUPER, B, exec, /nix/store/vn6cpkws7cb3p5ydhh9i5dh6x6sl6482-floorp-11.6.0/bin/.floorp-wrapped --name floorp
 bind = SUPER, B, exec, floorp
 bind = SUPER, L, exec, /home/titus/w11
 bind = SUPER, P, exec, wlogout
 bind = SUPER, F1, exec, ~/.config/hypr/keybind
+bind = SUPER, SPACE, exec, anyrun
 
 binde=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 binde=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-

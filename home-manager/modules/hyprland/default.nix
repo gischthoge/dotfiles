@@ -1,17 +1,17 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./config
   ];
 
   home.packages = with pkgs; [
-    jaq
-    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+#    jaq
+#    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     hyprland-autoname-workspaces
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = true;
+    systemd.enable = true;
   };
 
   xdg.systemDirs.data = let 
